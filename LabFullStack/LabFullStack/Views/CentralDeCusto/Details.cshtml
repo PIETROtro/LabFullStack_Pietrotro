@@ -1,0 +1,18 @@
+@model AppTask.Models.CentralDeCusto
+
+@{
+    ViewData["Title"] = "Detalhes - CentralDeCusto";
+}
+
+<h1>Detalhes</h1>
+
+<dl class="row">
+        <dt class="col-sm-3">Nome da Central</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.NomeCentral)</dd>
+        <dt class="col-sm-3">Valor Meta Anual</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.ValorMetaAnual)</dd>
+</dl>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model!.Codigo" class="btn btn-outline-secondary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</div>

@@ -1,0 +1,32 @@
+@model AppTask.Models.CentralDeCusto
+
+@{
+    ViewData["Title"] = "Editar CentralDeCusto";
+}
+
+<h1>Editar CentralDeCusto</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Codigo" />
+            <div class="form-group mb-3">
+                <label asp-for="NomeCentral" class="control-label">Nome da Central</label>
+                <input asp-for="NomeCentral" class="form-control" />
+                <span asp-validation-for="NomeCentral" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="ValorMetaAnual" class="control-label">Valor Meta Anual</label>
+                <input asp-for="ValorMetaAnual" class="form-control" type="number" step="0.01" />
+                <span asp-validation-for="ValorMetaAnual" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

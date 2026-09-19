@@ -1,0 +1,42 @@
+@model AppTask.Models.Incidente
+
+@{
+    ViewData["Title"] = "Editar Incidente";
+}
+
+<h1>Editar Incidente</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Codigo" />
+            <div class="form-group mb-3">
+                <label asp-for="DescricaoProblema" class="control-label">Descrição do Problema</label>
+                <input asp-for="DescricaoProblema" class="form-control" />
+                <span asp-validation-for="DescricaoProblema" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="DataIncidente" class="control-label">Data do Incidente</label>
+                <input asp-for="DataIncidente" class="form-control" type="date" />
+                <span asp-validation-for="DataIncidente" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Solucao" class="control-label">Solução</label>
+                <input asp-for="Solucao" class="form-control" />
+                <span asp-validation-for="Solucao" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Resolvido" class="control-label">Resolvido (sim/nao)</label>
+                <input asp-for="Resolvido" class="form-control" />
+                <span asp-validation-for="Resolvido" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

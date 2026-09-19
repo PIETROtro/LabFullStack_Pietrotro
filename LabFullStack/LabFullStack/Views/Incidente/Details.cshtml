@@ -1,0 +1,22 @@
+@model AppTask.Models.Incidente
+
+@{
+    ViewData["Title"] = "Detalhes - Incidente";
+}
+
+<h1>Detalhes</h1>
+
+<dl class="row">
+        <dt class="col-sm-3">Descrição do Problema</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.DescricaoProblema)</dd>
+        <dt class="col-sm-3">Data do Incidente</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.DataIncidente)</dd>
+        <dt class="col-sm-3">Solução</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Solucao)</dd>
+        <dt class="col-sm-3">Resolvido (sim/nao)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Resolvido)</dd>
+</dl>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model!.Codigo" class="btn btn-outline-secondary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</div>

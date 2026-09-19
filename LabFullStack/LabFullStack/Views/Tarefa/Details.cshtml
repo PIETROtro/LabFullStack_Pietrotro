@@ -1,0 +1,30 @@
+@model AppTask.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Detalhes - Tarefa";
+}
+
+<h1>Detalhes</h1>
+
+<dl class="row">
+        <dt class="col-sm-3">Descrição</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Descricao)</dd>
+        <dt class="col-sm-3">Data Planejada</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.DataPlanejada)</dd>
+        <dt class="col-sm-3">Data Iniciada</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.DataIniciada)</dd>
+        <dt class="col-sm-3">Data Finalizada</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.DataFinalizada)</dd>
+        <dt class="col-sm-3">Data Cancelada</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.DataCancelada)</dd>
+        <dt class="col-sm-3">Status</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.StatusTarefa)</dd>
+        <dt class="col-sm-3">Prazo</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Prazo)</dd>
+        <dt class="col-sm-3">Funcionário</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Funcionario!.Nome)</dd>
+</dl>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model!.Codigo" class="btn btn-outline-secondary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</div>

@@ -1,0 +1,21 @@
+@model AppTask.Models.Departamento
+
+@{
+    ViewData["Title"] = "Excluir - Departamento";
+}
+
+<h1>Excluir</h1>
+
+<h3>Tem certeza que deseja excluir este registro?</h3>
+<dl class="row">
+        <dt class="col-sm-3">Descrição</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Descricao)</dd>
+        <dt class="col-sm-3">Ativo</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Ativo)</dd>
+</dl>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Codigo" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</form>

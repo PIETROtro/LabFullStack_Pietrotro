@@ -1,0 +1,33 @@
+@model IEnumerable<AppTask.Models.CentralDeCusto>
+
+@{
+    ViewData["Title"] = "CentralDeCusto - Lista";
+}
+
+<h1>CentralDeCusto</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">+ Novo</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome da Central</th>
+            <th>Valor Meta Anual</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.NomeCentral)</td>
+            <td>@Html.DisplayFor(modelItem => item.ValorMetaAnual)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Codigo" class="btn btn-sm btn-outline-secondary">Editar</a>
+                <a asp-action="Details" asp-route-id="@item.Codigo" class="btn btn-sm btn-outline-info">Detalhes</a>
+                <a asp-action="Delete" asp-route-id="@item.Codigo" class="btn btn-sm btn-outline-danger">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

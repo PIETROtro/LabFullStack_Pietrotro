@@ -1,0 +1,33 @@
+@model IEnumerable<AppTask.Models.Departamento>
+
+@{
+    ViewData["Title"] = "Departamento - Lista";
+}
+
+<h1>Departamento</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">+ Novo</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Ativo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Descricao)</td>
+            <td>@Html.DisplayFor(modelItem => item.Ativo)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Codigo" class="btn btn-sm btn-outline-secondary">Editar</a>
+                <a asp-action="Details" asp-route-id="@item.Codigo" class="btn btn-sm btn-outline-info">Detalhes</a>
+                <a asp-action="Delete" asp-route-id="@item.Codigo" class="btn btn-sm btn-outline-danger">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
